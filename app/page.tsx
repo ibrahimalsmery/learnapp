@@ -1,103 +1,92 @@
+import EductionTextCard from "@/components/sections/EductionTextCard";
+import Fquestion from "@/components/sections/Fquestion";
+import PersonCard from "@/components/sections/PersonCard";
+import Topbar from "@/components/Topbar";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <>
+      <Topbar />
+      {/* hero section */}
+      <section className="flex flex-wrap items-center justify-center h-auto">
+        <h1 className="semibold-primary  text-[60px] text-center lg:text-right md:w-[428px]">تعلم مدرستي في جوالي📱</h1>
+        <img className="object-fill" src="/figma/simsim/main/simsim-hero-w-kids.png" alt="hero image" />
+      </section>
+      {/* problem of education */}
+      <section className="flex  flex-col justify-center items-center gap-[10px] text-center">
+        <h1 className="semibold-primary  text-[40px] w-[428px]">مشكلة التعليم والحل</h1>
+        <img src="/figma/simsim/main/problem_of_education.jpg" className="w-[752px] h-[450px]  rounded-[10px] object-cover" alt="problem of eduction" />
+      </section>
+
+      {/*  education methodology */}
+      <section className="flex flex-col justify-center items-center gap-[30px] p-[10px] text-center">
+        <h1 className="semibold-primary  text-[60px] w-[428px]">منهجية التعليم</h1>
+        <p className="semibold-30  text-center">في افتح ياسمسم نؤمن بأن التعلم يجب أن يكون ممتعًا ومحفزًا ومليئًا بالإبداع. إليك كيف نصمم تجربة استثنائية لطفلك:
+        </p>
+        <EductionTextCard title="دروس تعليمية واختبارات ممتعة" description="دروس تعليمية واختبارات تفاعلية شيقة تساعد في تعزيز مهارات القراءة والفهم مع تحفيز الطفل للتقدم." icon="📚" />
+        <EductionTextCard title="قصص وأنشطة تفاعلية" description="محتوى مميز من القصص، الأنشطة، والأناشيد، يقدم بأسلوب جذاب يعزز فهم الطفل ويشجعه على المشاركة." icon="📖" />
+        <EductionTextCard title="القرآن الكريم والأناشيد" description="مكتبة صوتية ومرئية تضم تلاوات عطرة وأناشيد تعليمية تُثري تجربة الطفل الروحية واللغوية.
+." icon="📕" />
+      </section>
+      {/* our customers */}
+      <section className="flex flex-col justify-center items-center p-[10px] gap-[10px]">
+        <h1 className="semibold-primary  text-[60px] ">ماذا يقول احبائنا عنا </h1>
+        <div className="flex justify-center gap-[10px]">
+          <PersonCard img="/figma/simsim/main/person.jpg" name="احمد" country="المغرب" />
+          <PersonCard img="/figma/simsim/main/person.jpg" name="احمد" country="المغرب" />
+          <PersonCard img="/figma/simsim/main/person.jpg" name="احمد" country="المغرب" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+      {/* FQA */}
+      <section className="flex flex-col justify-center items-center p-[10px] gap-[10px]">
+        <h1 className="semibold-primary  text-[60px] ">الاسئلة الشائعة </h1>
+        <p className="semibold-30  text-center">نعرف أنكم قد تتساءلون عن بعض التفاصيل، لذلك جمعنا أكثر الأسئلة تكرارًا هنا.</p>
+        <div className="flex flex-col items-center justify-center gap-[30px] w-full">
+          <Fquestion question="مل هي الفئة العمرية المستهدفة ؟" answer="التطبيق موجه للأطفال من سن 3 إلى 10 سنوات، مع محتوى مناسب لكل مرحلة عمرية." />
+          <Fquestion question="مل هي الفئة العمرية المستهدفة ؟" answer="التطبيق موجه للأطفال من سن 3 إلى 10 سنوات، مع محتوى مناسب لكل مرحلة عمرية." />
+          <Fquestion question="مل هي الفئة العمرية المستهدفة ؟" answer="التطبيق موجه للأطفال من سن 3 إلى 10 سنوات، مع محتوى مناسب لكل مرحلة عمرية." />
+        </div>
+      </section>
+      {/* footer */}
+      <footer className="flex flex-wrap items-start justify-start bg-[var(--color-primary)] text-white p-[10px] gap-[40px] min-h-[500px] pt-20">
+        <div className="md:flex-1  flex flex-col items-start">
+          <div className="flex items-center">
+            <img className="w-[58px] h-[87px] " src="/figma/simsim/main/opensimsim.png" alt="logo" />
+            <span>منصة افتح ياسمسم</span>
+          </div>
+          <p>منصة تعليمية تفاعلية مبتكرة تقدم تجربة تعلم ممتعة للأطفال، مصممة لتنمية مهاراتهم بطريقة إبداعية.</p>
+        </div>
+        <div className="md:flex-1">
+          <h1 className="semibold-30 pb-5">البرامج التعليمية</h1>
+          <hr className="border-[white] border-[2px]" />
+          <ul className="space-y-3 pt-3">
+            <li>اللغة العربية</li>
+            <li>الرياضيات</li>
+            <li>العلوم</li>
+          </ul>
+        </div>
+        <div className="md:flex-1">
+          <h1 className="semibold-30 pb-5">الروابط السريعة</h1>
+          <hr className="border-[white] border-[2px]" />
+          <ul className="space-y-3 pt-3">
+            <li>الرئيسية</li>
+            <li>البرامج التعليمية</li>
+            <li>عن المنصة</li>
+          </ul>
+        </div>
+        <div className="md:flex-1">
+          <h1 className="semibold-30 pb-5">تواصل معنا</h1>
+          <hr className="border-[white] border-[2px]" />
+          <ul className="space-y-3 pt-3">
+            <li>9700599665806+</li>
+            <li>palziyadmezher@gmail.com</li>
+          </ul>
+        </div>
+
       </footer>
-    </div>
+    </>
   );
 }
