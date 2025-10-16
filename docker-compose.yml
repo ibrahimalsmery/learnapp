@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  nextjs-dev:
+    container_name: nextjs-dev
+    build:
+      context: .
+      target: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    restart: unless-stopped
+
+  nextjs-prod:
+    container_name: nextjs-prod
+    build:
+      context: .
+      target: production
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    command: npm run start
+    restart: unless-stopped
